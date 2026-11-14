@@ -39,3 +39,8 @@ func _physics_process(delta: float) -> void:
 		charge -= charge
 #
 	move_and_slide()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("danger"):
+		position = Vector2(0,0)

@@ -16,6 +16,10 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 66.00758
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjr5b"]
+radius = 67.0
+height = 134.0
+
 [node name="Player" type="CharacterBody2D" unique_id=412430487]
 script = ExtResource("1_g2els")
 
@@ -24,11 +28,19 @@ position = Vector2(0, -86)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("GradientTexture2D_tgbg3")
 
-[node name="Collision" type="CollisionShape2D" parent="." unique_id=1072325583]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=371381960]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_g2els")
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=1072325583]
 position = Vector2(3, 11)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CircleShape2D_qhqgy")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=371381960]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_g2els")
+[node name="hitbox" type="Area2D" parent="." unique_id=294114216]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=285970708]
+position = Vector2(2, 11)
+shape = SubResource("CapsuleShape2D_rjr5b")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

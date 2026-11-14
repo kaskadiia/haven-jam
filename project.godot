@@ -30,6 +30,10 @@ folder_colors={
 "res://scripts/": "purple"
 }
 
+[global_group]
+
+danger=""
+
 [input]
 
 jump={
