@@ -24,13 +24,11 @@ position = Vector2(0, -86)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("GradientTexture2D_tgbg3")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=847920295]
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=371381960]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_g2els")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1072325583]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1072325583]
 position = Vector2(3, 11)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=371381960]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_g2els")
