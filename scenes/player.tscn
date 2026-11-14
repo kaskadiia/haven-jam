@@ -31,7 +31,8 @@ texture = SubResource("GradientTexture2D_tgbg3")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_g2els")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1072325583]
-position = Vector2(-0.99999964, 1.9999999)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1072325583]
+position = Vector2(-0.9999995, 1.9999996)
 rotation = 1.3962634
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CapsuleShape2D_qhqgy")
