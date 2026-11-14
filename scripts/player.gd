@@ -26,9 +26,15 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("charge"):
 		charge += 0.5
+	elif not Input.is_action_just_pressed("charge") and charge >= 0.1:
+		charge -= 0.01
 		
+
+	
+	
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity = direction * speed * charge
+		charge -= charge
 #
 	move_and_slide()
