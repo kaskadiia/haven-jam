@@ -23,6 +23,6 @@ func _physics_process(delta: float) -> void:
 	
 	# Hopping
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity = direction * distance
+		velocity = direction * clamp(distance * 2, 0, 500)
 #
 	move_and_slide()
