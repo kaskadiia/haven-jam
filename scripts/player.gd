@@ -24,8 +24,9 @@ func _physics_process(delta: float) -> void:
 	hue = 1.0 - clampf(speed / 500, 0.85, 1)
 	indicator.self_modulate = Color.from_hsv(hue,1,1,1)
 	
+	#setting charge values
 	if Input.is_action_just_pressed("charge"):
-		charge += 0.5
+		charge += 0.75
 	elif not Input.is_action_just_pressed("charge") and charge >= 0.1:
 		charge -= 0.01
 		
