@@ -6,6 +6,7 @@ var hue: float
 var direction: Vector2
 var distance: float
 var speed: float
+@export var charge: float
 
 func _physics_process(delta: float) -> void:
 	direction = self.global_position.direction_to(mousePos)
@@ -23,8 +24,11 @@ func _physics_process(delta: float) -> void:
 	hue = 1.0 - clampf(speed / 500, 0.85, 1)
 	indicator.self_modulate = Color.from_hsv(hue,1,1,1)
 	
-	# Hopping
+	if Input.is_action_just_pressed("charge"):
+		charge += 0.5
+		
+	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity = direction * speed
+		velocity = direction * speed * charge
 #
 	move_and_slide()
