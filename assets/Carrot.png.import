@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c660qb7jkxh31"
-path="res://.godot/imported/adorable-brown-rabbit-sitting-on-white-background-photo.jpg-1123af35c174b082f4ab6ef5512f9e36.ctex"
+uid="uid://cq45rx6ac622a"
+path="res://.godot/imported/Carrot.png-05f2273c6df623600dc333f75e8ebbca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/adorable-brown-rabbit-sitting-on-white-background-photo.jpg"
-dest_files=["res://.godot/imported/adorable-brown-rabbit-sitting-on-white-background-photo.jpg-1123af35c174b082f4ab6ef5512f9e36.ctex"]
+source_file="res://assets/Carrot.png"
+dest_files=["res://.godot/imported/Carrot.png-05f2273c6df623600dc333f75e8ebbca.ctex"]
 
 [params]
 
