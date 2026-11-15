@@ -1,12 +1,27 @@
 [gd_scene format=3 uid="uid://cpsearjfiykcg"]
 
 [ext_resource type="Script" uid="uid://b4xrkuo0jo831" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://dcqb3815i83wb" path="res://assets/Bunny.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://4sig7hw247jp" path="res://assets/bunny1.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bji6qw6cnubyp" path="res://assets/Arrow.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://qm0yqkxmdvwe" path="res://assets/bunny2.png" id="3_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjr5b"]
-radius = 67.0
-height = 134.0
+radius = 45.0
+height = 90.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tgbg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dqkch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qlg0r")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=412430487]
 script = ExtResource("1_g2els")
@@ -14,15 +29,14 @@ script = ExtResource("1_g2els")
 [node name="hitbox" type="Area2D" parent="." unique_id=294114216]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=285970708]
-position = Vector2(2, 11)
 shape = SubResource("CapsuleShape2D_rjr5b")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=371381960]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=766912082]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_g2els")
+sprite_frames = SubResource("SpriteFrames_tgbg3")
+frame_progress = 0.8095
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=350491677]
-position = Vector2(2, 11)
 shape = SubResource("CapsuleShape2D_rjr5b")
 
 [node name="Indicator" type="Sprite2D" parent="." unique_id=1525900056]
