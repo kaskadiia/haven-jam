@@ -34,7 +34,7 @@ func _ready() -> void:
 	# failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!\nHop and reach the carrot at the end!"
 #bounce
 func bounce():
-	if dir_buff.y < -0.18:
+	if dir_buff.y < -0.18 and canMove:
 		velocity = dir_buff * 250 * (1 + charge_buff)
 	#$Sprite.scale.y = 0.1
 
