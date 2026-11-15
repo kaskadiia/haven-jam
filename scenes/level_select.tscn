@@ -165,23 +165,6 @@ offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("6_o2xx4")
 
-[node name="Bnuy" type="TextureRect" parent="Sky" unique_id=1917642644]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -520.0
-offset_top = 169.0
-offset_right = -8.0
-offset_bottom = 681.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-mouse_filter = 2
-texture = ExtResource("8_o2xx4")
-
 [node name="Burrow" type="TextureRect" parent="Sky" unique_id=1410089876]
 layout_mode = 1
 anchors_preset = 8
@@ -189,15 +172,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 549.0001
+offset_left = 549.0
 offset_top = 156.0
-offset_right = 1061.0002
+offset_right = 1061.0001
 offset_bottom = 668.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(-0.4, 0.4)
 mouse_filter = 2
 texture = ExtResource("9_htctk")
+
+[node name="Bnuy" type="TextureRect" parent="Sky" unique_id=1031473719]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -546.0
+offset_top = 168.0
+offset_right = -33.999878
+offset_bottom = 680.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+mouse_filter = 2
+texture = ExtResource("8_o2xx4")
 
 [node name="Title" type="Label" parent="." unique_id=255918633]
 layout_mode = 1
