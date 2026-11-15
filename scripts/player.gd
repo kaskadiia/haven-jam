@@ -48,7 +48,7 @@ func reverse_seq():
 			failUI.visible = false
 		)
 		goal_obj.visible = false
-		timer.time = int(timer.time * 1.35)
+		timer.time = int(timer.time * 1.5)
 		timer.get_node("../Warning").visible = true
 		if timer.time > 240:
 			timer.time = 240
