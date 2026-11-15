@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://noai5vdogymu" path="res://scenes/l_3.tscn" id="4_ckc44"]
 [ext_resource type="Texture2D" uid="uid://dgybb6syfbqpx" path="res://assets/images/Panel.png" id="5_htctk"]
 [ext_resource type="Texture2D" uid="uid://dd0u8xyuknimm" path="res://assets/images/Sky.png" id="6_o2xx4"]
-[ext_resource type="Texture2D" uid="uid://4sig7hw247jp" path="res://assets/images/bunny1.png" id="7_ckc44"]
 [ext_resource type="Texture2D" uid="uid://dbfnaobqxyrgm" path="res://assets/images/Button.png" id="7_s6tf7"]
 [ext_resource type="Texture2D" uid="uid://qm0yqkxmdvwe" path="res://assets/images/bunny2.png" id="8_o2xx4"]
 [ext_resource type="Texture2D" uid="uid://cp8hbig2r4sl3" path="res://assets/images/BurrowOld.png" id="9_htctk"]
@@ -15,12 +14,6 @@
 [sub_resource type="LabelSettings" id="LabelSettings_tgbg3"]
 font = ExtResource("1_3shnc")
 font_size = 32
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_tgbg3"]
-frames = 2
-frame_0/texture = ExtResource("7_ckc44")
-frame_1/texture = ExtResource("8_o2xx4")
-frame_1/duration = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_5l4lb"]
 font = ExtResource("1_3shnc")
@@ -187,7 +180,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.4, 0.4)
 mouse_filter = 2
-texture = SubResource("AnimatedTexture_tgbg3")
+texture = ExtResource("8_o2xx4")
 
 [node name="Burrow" type="TextureRect" parent="Sky" unique_id=1410089876]
 layout_mode = 1
