@@ -78,6 +78,7 @@ frame_progress = 0.9832568
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=961785483]
 color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+energy = 0.0
 shadow_enabled = true
 shadow_filter_smooth = 64.0
 texture = ExtResource("6_tuyoq")
@@ -86,6 +87,7 @@ texture = ExtResource("6_tuyoq")
 position = Vector2(-5, 30.000002)
 scale = Vector2(3, 3)
 color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+energy = 0.0
 shadow_enabled = true
 shadow_filter_smooth = 64.0
 texture = ExtResource("6_tuyoq")

@@ -66,6 +66,13 @@ func reverse_seq():
 		tw2.tween_property(parallax, "modulate",Color(0.093, 0.093, 0.093, 1.0), timer.time * 0.75)
 		tw2.play()
 		tw.play()
+		var tw3 = get_tree().create_tween()
+		tw3.set_trans(Tween.TRANS_LINEAR)
+		tw3.set_parallel(true)
+		tw3.tween_property($PointLight2D, "energy", 1.0, timer.time * 0.25)
+		tw3.tween_property($PointLight2D2, "energy", 1.0, timer.time * 0.25)
+		tw3.play()
+		
 
 	
 
