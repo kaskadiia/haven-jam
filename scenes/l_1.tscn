@@ -1102,7 +1102,7 @@ pattern_4 = SubResource("TileMapPattern_ssvqc")
 pattern_5 = SubResource("TileMapPattern_264po")
 pattern_6 = SubResource("TileMapPattern_1kice")
 
-[sub_resource type="LabelSettings" id="LabelSettings_1pohe"]
+[sub_resource type="LabelSettings" id="LabelSettings_bpecs"]
 font = ExtResource("8_84gcc")
 font_size = 32
 
@@ -1110,7 +1110,7 @@ font_size = 32
 font = ExtResource("8_84gcc")
 font_size = 32
 
-[sub_resource type="LabelSettings" id="LabelSettings_bpecs"]
+[sub_resource type="LabelSettings" id="LabelSettings_1pohe"]
 font = ExtResource("8_84gcc")
 font_size = 32
 
@@ -1165,10 +1165,10 @@ anchor_bottom = 1.0
 offset_top = 3.0
 offset_bottom = 3.0
 
-[node name="Results" parent="CanvasLayer/CameraUI" index="0" unique_id=1199146736]
-label_settings = SubResource("LabelSettings_1pohe")
+[node name="Warning" parent="CanvasLayer/CameraUI" index="1" unique_id=1387480738]
+label_settings = SubResource("LabelSettings_bpecs")
 
-[node name="Timer" parent="CanvasLayer/CameraUI" index="1" unique_id=591530897 node_paths=PackedStringArray("player")]
+[node name="Timer" parent="CanvasLayer/CameraUI" index="2" unique_id=591530897 node_paths=PackedStringArray("player")]
 anchors_preset = 7
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -1178,8 +1178,8 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_vtaks")
 player = NodePath("../../../Player")
 
-[node name="Warning" parent="CanvasLayer/CameraUI" index="2" unique_id=1387480738]
-label_settings = SubResource("LabelSettings_bpecs")
+[node name="Results" parent="CanvasLayer/CameraUI" index="4" unique_id=1199146736]
+label_settings = SubResource("LabelSettings_1pohe")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=382253848]
 position = Vector2(3, 141)

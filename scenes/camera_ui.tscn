@@ -3,11 +3,11 @@
 [ext_resource type="FontFile" uid="uid://rjckcq8osqvi" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="1_4plvg"]
 [ext_resource type="Script" uid="uid://cck0pmx2uu1ic" path="res://scripts/stopwatch.gd" id="2_ro4ow"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_tgbg3"]
+[sub_resource type="LabelSettings" id="LabelSettings_ro4ow"]
 font = ExtResource("1_4plvg")
 font_size = 32
 
-[sub_resource type="LabelSettings" id="LabelSettings_ro4ow"]
+[sub_resource type="LabelSettings" id="LabelSettings_tgbg3"]
 font = ExtResource("1_4plvg")
 font_size = 32
 
@@ -21,43 +21,10 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Results" type="Label" parent="." unique_id=1199146736]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -210.0
-offset_right = 146.0
-offset_bottom = -129.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-text = "Hm...
-Press R to Restart"
-label_settings = SubResource("LabelSettings_tgbg3")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Timer" type="Label" parent="." unique_id=591530897]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -146.0
-offset_top = -330.0
-offset_right = 146.0
-offset_bottom = -249.0
-grow_horizontal = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-text = "00:00"
-label_settings = SubResource("LabelSettings_tgbg3")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("2_ro4ow")
+[node name="TextureRect" type="TextureRect" parent="." unique_id=968183382]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Warning" type="Label" parent="." unique_id=1387480738]
 visible = false
@@ -79,7 +46,50 @@ label_settings = SubResource("LabelSettings_ro4ow")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=968183382]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Timer" type="Label" parent="." unique_id=591530897]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -146.0
+offset_top = -330.0
+offset_right = 146.0
+offset_bottom = -249.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "00:00"
+label_settings = SubResource("LabelSettings_tgbg3")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ro4ow")
+
+[node name="Fade" type="ColorRect" parent="." unique_id=1205086778]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Results" type="Label" parent="." unique_id=1199146736]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -210.0
+offset_right = 146.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "Hm...
+Press R to Restart"
+label_settings = SubResource("LabelSettings_tgbg3")
+horizontal_alignment = 1
+vertical_alignment = 1
