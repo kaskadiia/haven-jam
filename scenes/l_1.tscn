@@ -1074,6 +1074,7 @@ texture = ExtResource("9_gd8b3")
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=698693403]
 stream = ExtResource("10_bpecs")
 autoplay = true
+playback_type = 1
 
 [editable path="Player"]
 [editable path="CanvasLayer/CameraUI"]
