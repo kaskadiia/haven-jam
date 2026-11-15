@@ -1028,7 +1028,7 @@ shape = SubResource("RectangleShape2D_rjr5b")
 shape = SubResource("WorldBoundaryShape2D_tgbg3")
 
 [node name="Goal" parent="." unique_id=1763494850 instance=ExtResource("3_ljem3")]
-position = Vector2(812, 307)
+position = Vector2(10018, 671)
 
 [node name="FinalGoal" parent="." unique_id=1696877343 instance=ExtResource("4_brwov")]
 position = Vector2(-200, 205)
@@ -1053,6 +1053,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
 
 [node name="Timer" parent="CanvasLayer/CameraUI" index="1" unique_id=591530897 node_paths=PackedStringArray("player")]
 anchors_preset = 7
