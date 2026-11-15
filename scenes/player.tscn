@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://lx7ohld7665l" path="res://assets/images/Arrow2.png" id="5_tuyoq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjr5b"]
-radius = 45.0
-height = 90.0
+radius = 14.0
+height = 54.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tgbg3"]
 animations = [{
@@ -44,6 +44,8 @@ script = ExtResource("1_g2els")
 [node name="hitbox" type="Area2D" parent="." unique_id=294114216]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=285970708]
+position = Vector2(-5, 30)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_rjr5b")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=766912082]
@@ -53,6 +55,8 @@ autoplay = "default"
 frame_progress = 0.47027048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=350491677]
+position = Vector2(-5, 30)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_rjr5b")
 
 [node name="Indicator" type="AnimatedSprite2D" parent="." unique_id=1241155966]
