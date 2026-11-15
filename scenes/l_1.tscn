@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ba8u0nj3j6u1b" path="res://scenes/camera_ui.tscn" id="7_s2md8"]
 [ext_resource type="FontFile" uid="uid://rjckcq8osqvi" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="8_84gcc"]
 [ext_resource type="Texture2D" uid="uid://dd0u8xyuknimm" path="res://assets/images/Sky.png" id="9_gd8b3"]
+[ext_resource type="AudioStream" uid="uid://bbo5ii2pmd0qm" path="res://assets/audio/havenjam.mp3" id="10_bpecs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tgbg3"]
 distance = -593.0
@@ -1069,6 +1070,10 @@ repeat_times = 3
 position = Vector2(2857, -455)
 scale = Vector2(2, 2)
 texture = ExtResource("9_gd8b3")
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=698693403]
+stream = ExtResource("10_bpecs")
+autoplay = true
 
 [editable path="Player"]
 [editable path="CanvasLayer/CameraUI"]
