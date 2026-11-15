@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	else:
 		velocity = Vector2(velocity.x * 0.9,velocity.y * 0.9)
-		
+	
 	# Indicator Color
 	mousePos = get_global_mouse_position()
 	indicator.rotation = direction.angle()
@@ -57,6 +57,13 @@ func _physics_process(delta: float) -> void:
 		charge = 0
 		hue = 0.15
 		canMove = true
+		
+	if is_on_wall():
+		velocity = velocity.bounce(-get_wall_normal())
+		print(velocity.bounce(get_wall_normal()),get_wall_normal())
+		
+	$Sprite.scale.x = 0.2 if velocity.x > 0 else -0.2
+	
 	move_and_slide()
 
 # Results
