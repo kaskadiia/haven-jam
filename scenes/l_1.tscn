@@ -1,14 +1,14 @@
 [gd_scene format=4 uid="uid://blektmpxnm4aq"]
 
-[ext_resource type="PackedScene" uid="uid://cpsearjfiykcg" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://ba8u0nj3j6u1b" path="res://scenes/camera_ui.tscn" id="2_p57ef"]
-[ext_resource type="Texture2D" uid="uid://i1mykl2r8iig" path="res://assets/images/barbed-wire-transparent-free-png.webp" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://b0ln8gccfxusf" path="res://scenes/goal.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://d22abg0604pl0" path="res://scenes/final_goal.tscn" id="5_iywne"]
-[ext_resource type="Texture2D" uid="uid://c8gfmgfkufcuc" path="res://assets/tilesets/path-tileset.png" id="6_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://dqacwrnhgim2" path="res://assets/tilesets/prop-tileset.png" id="7_gee14"]
-[ext_resource type="FontFile" uid="uid://rjckcq8osqvi" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="8_0tnpc"]
-[ext_resource type="Texture2D" uid="uid://dd0u8xyuknimm" path="res://assets/images/Sky.png" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://cpsearjfiykcg" path="res://scenes/player.tscn" id="1_1pohe"]
+[ext_resource type="Texture2D" uid="uid://i1mykl2r8iig" path="res://assets/images/barbed-wire-transparent-free-png.webp" id="2_bpecs"]
+[ext_resource type="PackedScene" uid="uid://b0ln8gccfxusf" path="res://scenes/goal.tscn" id="3_ljem3"]
+[ext_resource type="PackedScene" uid="uid://d22abg0604pl0" path="res://scenes/final_goal.tscn" id="4_brwov"]
+[ext_resource type="Texture2D" uid="uid://c8gfmgfkufcuc" path="res://assets/tilesets/path-tileset.png" id="5_yq8ib"]
+[ext_resource type="Texture2D" uid="uid://dqacwrnhgim2" path="res://assets/tilesets/prop-tileset.png" id="6_8o1hg"]
+[ext_resource type="PackedScene" uid="uid://ba8u0nj3j6u1b" path="res://scenes/camera_ui.tscn" id="7_s2md8"]
+[ext_resource type="FontFile" uid="uid://rjckcq8osqvi" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="8_84gcc"]
+[ext_resource type="Texture2D" uid="uid://dd0u8xyuknimm" path="res://assets/images/Sky.png" id="9_gd8b3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjr5b"]
 size = Vector2(84, 50)
@@ -39,7 +39,7 @@ tile_data = PackedInt32Array(0, 131075, 4, 1, 196611, 4)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca42v"]
 resource_name = "Path"
-texture = ExtResource("6_u5sy4")
+texture = ExtResource("5_yq8ib")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -810,7 +810,7 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_264po"]
 resource_name = "Props"
-texture = ExtResource("7_gee14")
+texture = ExtResource("6_8o1hg")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/z_index = 10
@@ -919,7 +919,7 @@ tile_data = PackedInt32Array(0, 524288, 0, 65536, 524288, 1, 131072, 524288, 2, 
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5newe"]
 resource_name = "Props"
-texture = ExtResource("7_gee14")
+texture = ExtResource("6_8o1hg")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/z_index = 10
@@ -999,12 +999,12 @@ pattern_5 = SubResource("TileMapPattern_264po")
 pattern_6 = SubResource("TileMapPattern_1kice")
 
 [sub_resource type="LabelSettings" id="LabelSettings_vtaks"]
-font = ExtResource("8_0tnpc")
+font = ExtResource("8_84gcc")
 font_size = 32
 
 [node name="L1" type="Node2D" unique_id=1920538082]
 
-[node name="Player" parent="." unique_id=412430487 node_paths=PackedStringArray("failUI", "timer", "goal_obj") instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." unique_id=412430487 node_paths=PackedStringArray("failUI", "timer", "goal_obj") instance=ExtResource("1_1pohe")]
 position = Vector2(3, 141)
 failUI = NodePath("../CanvasLayer/CameraUI/Results")
 timer = NodePath("../CanvasLayer/CameraUI/Timer")
@@ -1018,7 +1018,7 @@ position = Vector2(630, 419)
 
 [node name="BarbedWireS" type="Sprite2D" parent="Danger" unique_id=827998217]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("3_lnu2h")
+texture = ExtResource("2_bpecs")
 
 [node name="BarbedWireC" type="CollisionShape2D" parent="Danger" unique_id=1380664527]
 position = Vector2(3, -1)
@@ -1027,10 +1027,10 @@ shape = SubResource("RectangleShape2D_rjr5b")
 [node name="Water" type="CollisionShape2D" parent="Danger" unique_id=555626800]
 shape = SubResource("WorldBoundaryShape2D_tgbg3")
 
-[node name="Goal" parent="." unique_id=1763494850 instance=ExtResource("4_lbhrr")]
+[node name="Goal" parent="." unique_id=1763494850 instance=ExtResource("3_ljem3")]
 position = Vector2(812, 307)
 
-[node name="FinalGoal" parent="." unique_id=1696877343 instance=ExtResource("5_iywne")]
+[node name="FinalGoal" parent="." unique_id=1696877343 instance=ExtResource("4_brwov")]
 position = Vector2(-200, 205)
 
 [node name="TileMapLayers" type="Node2D" parent="." unique_id=1708371086]
@@ -1047,7 +1047,7 @@ tile_set = SubResource("TileSet_tgbg3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1987124301]
 
-[node name="CameraUI" parent="CanvasLayer" unique_id=642200899 instance=ExtResource("2_p57ef")]
+[node name="CameraUI" parent="CanvasLayer" unique_id=642200899 instance=ExtResource("7_s2md8")]
 anchors_preset = 15
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1079,7 +1079,7 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D" unique_id=370885637]
 position = Vector2(2857, -455)
 scale = Vector2(2, 2)
-texture = ExtResource("8_gee14")
+texture = ExtResource("9_gd8b3")
 
 [editable path="Player"]
 [editable path="CanvasLayer/CameraUI"]

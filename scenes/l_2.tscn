@@ -1000,10 +1000,11 @@ pattern_6 = SubResource("TileMapPattern_1kice")
 [node name="L2" type="Node2D" unique_id=1920538082]
 position = Vector2(5, 2)
 
-[node name="Player" parent="." unique_id=412430487 node_paths=PackedStringArray("failUI", "timer") instance=ExtResource("1_ugnwd")]
+[node name="Player" parent="." unique_id=412430487 node_paths=PackedStringArray("failUI", "timer", "goal_obj") instance=ExtResource("1_ugnwd")]
 position = Vector2(3, 141)
 failUI = NodePath("../CanvasLayer/CameraUI/Results")
 timer = NodePath("../CanvasLayer/CameraUI/Timer")
+goal_obj = NodePath("../Goal")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=1519801586]
 remote_path = NodePath("../../Camera2D")
@@ -1049,13 +1050,14 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Timer" parent="CanvasLayer/CameraUI" index="1" unique_id=591530897]
+[node name="Timer" parent="CanvasLayer/CameraUI" index="1" unique_id=591530897 node_paths=PackedStringArray("player")]
 anchors_preset = 7
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -81.0
 offset_bottom = 0.0
 grow_vertical = 0
+player = NodePath("../../../Player")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=382253848]
 position = Vector2(3, 141)

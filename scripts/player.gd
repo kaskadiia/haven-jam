@@ -110,6 +110,11 @@ func _physics_process(delta: float) -> void:
 	#$Sprite.scale.y = lerpf($Sprite.scale.y, 0.2, 0.02)
 	
 	
+		
+	# Exit
+	if Input.is_action_pressed("exit"):
+		get_tree().change_scene_to_file("res://scenes/level_select.tscn")
+		
 	var last = velocity
 		
 	
