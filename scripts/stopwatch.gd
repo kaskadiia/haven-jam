@@ -10,5 +10,4 @@ func _process(delta: float) -> void:
 	minutes = int(time_elapsed) / 60
 	seconds = int(time_elapsed) % 60
 	time_string = "%02d:%02d" % [minutes,seconds]
-	print(time_string)
 	text = str(time_string)

@@ -56,7 +56,8 @@ frame_progress = 0.47027048
 shape = SubResource("CapsuleShape2D_rjr5b")
 
 [node name="Indicator" type="AnimatedSprite2D" parent="." unique_id=1241155966]
-scale = Vector2(0.75, 0.75)
+z_index = 5
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_uci4i")
 autoplay = "default"
 frame_progress = 0.9832568

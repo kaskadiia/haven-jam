@@ -17,7 +17,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FailScreen" type="Label" parent="." unique_id=1199146736]
+[node name="Results" type="Label" parent="." unique_id=1199146736]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -32,7 +32,7 @@ offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-text = "A failure!
+text = "Hm...
 Press R to Restart"
 label_settings = SubResource("LabelSettings_tgbg3")
 horizontal_alignment = 1

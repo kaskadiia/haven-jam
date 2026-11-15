@@ -1,16 +1,21 @@
 extends CharacterBody2D
 
-@onready var failUI = $Camera2D/CameraUI/FailScreen
+@onready var failUI = $Camera2D/CameraUI/Results
 @onready var timer = $Camera2D/CameraUI/Timer
 @onready var indicator = $Indicator
 
 @export var charge: float
 @export var goal: bool = false
+@export var canMove: bool = true
 
 var mousePos: Vector2
 var hue: float = 0.15
 var direction: Vector2
 var distance: float
+
+func _ready() -> void:
+	failUI.visible = true
+	failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!"
 
 func _physics_process(delta: float) -> void:
 	direction = self.global_position.direction_to(mousePos)
@@ -35,10 +40,12 @@ func _physics_process(delta: float) -> void:
 			charge = 0
 			hue = 0.15
 	# Hop
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and canMove == true:
 		velocity = direction * 250 * (1 + charge)
 		charge = 0
 		hue = 0.15
+		if failUI.visible == true:
+			failUI.visible = false
 		
 	# Restart
 	if Input.is_action_pressed("restart level"):
@@ -49,15 +56,30 @@ func _physics_process(delta: float) -> void:
 		goal = false
 		charge = 0
 		hue = 0.15
+		canMove = true
 	move_and_slide()
 
-# Fail
+# Results
+const resultsText = [
+	"Unfortunate...",
+	"oof",
+	"A fail...",
+	"Try again!!",
+	"You can bounce back!!!",
+	"You got this!!"
+]
+
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("danger"):
 		velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
 		failUI.visible = true
+		failUI.text = resultsText[randi_range(0,len(resultsText)) - 1] + "\nPress R to Restart"
+		canMove = false
 	if area.is_in_group("goal"):
 		goal = true
 	if area.is_in_group("finalgoal"):
 		if goal == true:
+			canMove = false
+			failUI.visible = true
+			failUI.text = "Amazing! Cleared in " + timer.text + "!\nPress R to Restart"
 			print("wowow you win!!!")
