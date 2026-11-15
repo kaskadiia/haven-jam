@@ -66,8 +66,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if is_on_wall():
-		velocity = last.bounce(get_wall_normal(	))
-		print(velocity)
+		velocity = last.bounce(get_wall_normal())
+	if is_on_floor() and not Input.is_action_just_pressed("jump") and last.y > 18.0:
+		velocity.y = -last.y
 
 # Results
 const resultsText = [
