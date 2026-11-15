@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Haven Jam"
-run/main_scene="uid://blektmpxnm4aq"
+run/main_scene="uid://ct1u0772p386s"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
