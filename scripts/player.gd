@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+@onready var persihscreen = $Camera2D/persihscreen
 @onready var indicator = $Indicator
 var mousePos: Vector2
 var hue: float = 0.15
@@ -34,11 +34,15 @@ func _physics_process(delta: float) -> void:
 		velocity = direction * 250 * (1 + charge)
 		charge = 0
 		hue = 0.15
-
-	move_and_slide()
-
-
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("danger"):
+	#restarts levels
+	if Input.is_action_pressed("restart level"):
 		position = Vector2(0,0)
 		velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
+		
+	move_and_slide()
+
+#perish/restART mehcanic
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("danger"):
+		velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
+		persihscreen.visible = !persihscreen.visible
