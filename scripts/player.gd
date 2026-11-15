@@ -19,7 +19,7 @@ var charge_buff: float
 func _ready() -> void:
 	failUI.visible = true
 	failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!\nHop and reach the carrot at the end!"
-
+#bounce
 func bounce():
 	if dir_buff.y < -0.18:
 		velocity = dir_buff * 250 * (1 + charge_buff)
@@ -85,6 +85,7 @@ func _physics_process(delta: float) -> void:
 		elif last.y > 230.0:
 			velocity.y = -last.y
 		
+		# charge scroll option
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():

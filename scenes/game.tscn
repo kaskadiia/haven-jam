@@ -997,7 +997,7 @@ pattern_4 = SubResource("TileMapPattern_ssvqc")
 pattern_5 = SubResource("TileMapPattern_264po")
 pattern_6 = SubResource("TileMapPattern_1kice")
 
-[node name="Game" type="Node2D" unique_id=1920538082]
+[node name="L1" type="Node2D" unique_id=1920538082]
 
 [node name="Player" parent="." unique_id=412430487 node_paths=PackedStringArray("failUI", "timer") instance=ExtResource("1_uwrxv")]
 position = Vector2(3, 141)
