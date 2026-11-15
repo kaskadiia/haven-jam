@@ -137,7 +137,8 @@ func _physics_process(delta: float) -> void:
 	# Exit
 	if Input.is_action_pressed("exit"):
 		get_tree().change_scene_to_file("res://scenes/level_select.tscn")
-		
+		Engine.time_scale = 1
+
 	var last = velocity
 		
 	

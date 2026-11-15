@@ -11,9 +11,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_ifuaq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ifuaq")
 }],
 "loop": 1,
 "name": &"default",
