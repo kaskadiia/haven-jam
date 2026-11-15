@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 	direction = self.global_position.direction_to(mousePos)
 	distance = self.global_position.distance_to(mousePos)
 	
+	
 	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -58,13 +59,15 @@ func _physics_process(delta: float) -> void:
 		hue = 0.15
 		canMove = true
 		
-	if is_on_wall():
-		velocity = velocity.bounce(-get_wall_normal())
-		print(velocity.bounce(get_wall_normal()),get_wall_normal())
 		
 	$Sprite.scale.x = 0.2 if velocity.x > 0 else -0.2
+	var last = velocity
 	
 	move_and_slide()
+	
+	if is_on_wall():
+		velocity = last.bounce(get_wall_normal(	))
+		print(velocity)
 
 # Results
 const resultsText = [
