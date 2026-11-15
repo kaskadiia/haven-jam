@@ -55,48 +55,5 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_lnu2h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barbed wire" unique_id=1380664527]
-position = Vector2(2, -1)
-shape = SubResource("RectangleShape2D_rjr5b")
-
-[node name="barbed wire2" type="Area2D" parent="." unique_id=629863938 groups=["danger"]]
-position = Vector2(630, 419)
-
-[node name="Sprite2D" type="Sprite2D" parent="barbed wire2" unique_id=1405928880]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("3_lnu2h")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="barbed wire2" unique_id=1080832453]
-position = Vector2(440, 260)
-shape = SubResource("RectangleShape2D_rjr5b")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="barbed wire2" unique_id=570904422]
-position = Vector2(525, 262)
-shape = SubResource("RectangleShape2D_rjr5b")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="barbed wire2" unique_id=591985397]
-position = Vector2(604, 263)
-shape = SubResource("RectangleShape2D_rjr5b")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="barbed wire2" unique_id=1470161106]
-position = Vector2(673, 269)
-shape = SubResource("RectangleShape2D_rjr5b")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="barbed wire2" unique_id=1079326266]
-position = Vector2(1196, 257)
-shape = SubResource("RectangleShape2D_rjr5b")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="barbed wire2" unique_id=570794279]
-position = Vector2(1275, 258)
-shape = SubResource("RectangleShape2D_rjr5b")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="barbed wire2" unique_id=665729065]
-position = Vector2(1344, 259)
-shape = SubResource("RectangleShape2D_rjr5b")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="barbed wire2" unique_id=506370621]
-position = Vector2(1420, 252)
-shape = SubResource("RectangleShape2D_rjr5b")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="barbed wire2" unique_id=931464935]
-position = Vector2(1506, 247)
+position = Vector2(3, -1)
 shape = SubResource("RectangleShape2D_rjr5b")
