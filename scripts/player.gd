@@ -190,4 +190,4 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			Engine.time_scale = 0
 			
 func please_let_me_commit():
-		pass
+		pass #pass 2
