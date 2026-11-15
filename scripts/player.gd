@@ -79,6 +79,7 @@ func reverse_seq():
 		tw3.tween_property($PointLight2D2, "energy", 1.0, timer.time * 0.25)
 		tw3.play()
 		
+		
 
 	
 
