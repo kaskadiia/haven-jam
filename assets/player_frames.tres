@@ -1,0 +1,21 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b5rbfk13h87gj"]
+
+[ext_resource type="Texture2D" uid="uid://4sig7hw247jp" path="res://assets/images/bunny1.png" id="1_f28mp"]
+[ext_resource type="Texture2D" uid="uid://qm0yqkxmdvwe" path="res://assets/images/bunny2.png" id="2_ifuaq"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f28mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifuaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifuaq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]

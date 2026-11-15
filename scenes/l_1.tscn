@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://blektmpxnm4aq"]
 
 [ext_resource type="PackedScene" uid="uid://cpsearjfiykcg" path="res://scenes/player.tscn" id="1_1pohe"]
+[ext_resource type="SpriteFrames" uid="uid://b5rbfk13h87gj" path="res://assets/player_frames.tres" id="2_bpecs"]
 [ext_resource type="PackedScene" uid="uid://b0ln8gccfxusf" path="res://scenes/goal.tscn" id="3_ljem3"]
 [ext_resource type="PackedScene" uid="uid://d22abg0604pl0" path="res://scenes/final_goal.tscn" id="4_brwov"]
 [ext_resource type="Texture2D" uid="uid://c8gfmgfkufcuc" path="res://assets/tilesets/path-tileset.png" id="5_yq8ib"]
@@ -1122,6 +1123,10 @@ timer = NodePath("../CanvasLayer/CameraUI/Timer")
 dark = NodePath("../Dark")
 parallax = NodePath("../Node2D/Parallax2D")
 goal_obj = NodePath("../Goal")
+
+[node name="Sprite" parent="Player" index="1" unique_id=766912082]
+sprite_frames = ExtResource("2_bpecs")
+frame_progress = 0.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=1519801586]
 remote_path = NodePath("../../Camera2D")

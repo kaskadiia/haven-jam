@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Haven Jam"
+config/name="Back to the Burrow"
 run/main_scene="uid://ct1u0772p386s"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://bbfk1wqv1cusl"
 
 [display]
 
