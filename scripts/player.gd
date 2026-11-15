@@ -21,7 +21,8 @@ func _ready() -> void:
 	failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!\nHop and reach the carrot at the end!"
 
 func bounce():
-	velocity = dir_buff * 250 * (1 + charge_buff)
+	if dir_buff.y < -0.18:
+		velocity = dir_buff * 250 * (1 + charge_buff)
 	if failUI.visible == true:
 		failUI.visible = false
 
