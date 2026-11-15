@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d22abg0604pl0" path="res://scenes/final_goal.tscn" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8gfmgfkufcuc" path="res://assets/tilesets/path-tileset.png" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://dqacwrnhgim2" path="res://assets/tilesets/prop-tileset.png" id="7_gee14"]
+[ext_resource type="FontFile" uid="uid://rjckcq8osqvi" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="8_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://dd0u8xyuknimm" path="res://assets/images/Sky.png" id="8_gee14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjr5b"]
@@ -997,12 +998,17 @@ pattern_4 = SubResource("TileMapPattern_ssvqc")
 pattern_5 = SubResource("TileMapPattern_264po")
 pattern_6 = SubResource("TileMapPattern_1kice")
 
+[sub_resource type="LabelSettings" id="LabelSettings_vtaks"]
+font = ExtResource("8_0tnpc")
+font_size = 32
+
 [node name="L1" type="Node2D" unique_id=1920538082]
 
-[node name="Player" parent="." unique_id=412430487 node_paths=PackedStringArray("failUI", "timer") instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." unique_id=412430487 node_paths=PackedStringArray("failUI", "timer", "goal_obj") instance=ExtResource("1_uwrxv")]
 position = Vector2(3, 141)
 failUI = NodePath("../CanvasLayer/CameraUI/Results")
 timer = NodePath("../CanvasLayer/CameraUI/Timer")
+goal_obj = NodePath("../Goal")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=1519801586]
 remote_path = NodePath("../../Camera2D")
@@ -1022,7 +1028,7 @@ shape = SubResource("RectangleShape2D_rjr5b")
 shape = SubResource("WorldBoundaryShape2D_tgbg3")
 
 [node name="Goal" parent="." unique_id=1763494850 instance=ExtResource("4_lbhrr")]
-position = Vector2(10042, 660)
+position = Vector2(812, 307)
 
 [node name="FinalGoal" parent="." unique_id=1696877343 instance=ExtResource("5_iywne")]
 position = Vector2(-200, 205)
@@ -1048,13 +1054,15 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Timer" parent="CanvasLayer/CameraUI" index="1" unique_id=591530897]
+[node name="Timer" parent="CanvasLayer/CameraUI" index="1" unique_id=591530897 node_paths=PackedStringArray("player")]
 anchors_preset = 7
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -81.0
 offset_bottom = 0.0
 grow_vertical = 0
+label_settings = SubResource("LabelSettings_vtaks")
+player = NodePath("../../../Player")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=382253848]
 position = Vector2(3, 141)
