@@ -66,6 +66,8 @@ func _physics_process(delta: float) -> void:
 		timer.time_elapsed = 0.0
 		goal = false
 		charge = 0
+		dir_buff = Vector2.ZERO
+		charge_buff = 0
 		hue = 0.15
 		canMove = true
 		
