@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var failUI: Label
 @export var timer: Label
 @onready var indicator = $Indicator
+@onready var g_indicator = $GhostInd
 
 @export var charge: float
 @export var goal: bool = false
@@ -12,10 +13,17 @@ var mousePos: Vector2
 var hue: float = 0.15
 var direction: Vector2
 var distance: float
+var dir_buff: Vector2
+var charge_buff: float
 
 func _ready() -> void:
 	failUI.visible = true
 	failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!\nHop and reach the carrot at the end!"
+
+func bounce():
+	velocity = dir_buff * 250 * (1 + charge_buff)
+	if failUI.visible == true:
+		failUI.visible = false
 
 func _physics_process(delta: float) -> void:
 	direction = self.global_position.direction_to(mousePos)
@@ -41,12 +49,14 @@ func _physics_process(delta: float) -> void:
 			charge = 0
 			hue = 0.15
 	# Hop
-	if Input.is_action_just_pressed("jump") and is_on_floor() and canMove == true:
-		velocity = direction * 250 * (1 + charge)
-		charge = 0
-		hue = 0.15
-		if failUI.visible == true:
-			failUI.visible = false
+	if Input.is_action_just_pressed("jump"):
+		dir_buff = direction
+		charge_buff = charge
+		g_indicator.rotation = dir_buff.angle()
+		g_indicator.self_modulate = indicator.self_modulate
+		if is_on_floor() and canMove == true:
+			bounce()
+
 		
 	# Restart
 	if Input.is_action_pressed("restart level"):
@@ -62,13 +72,16 @@ func _physics_process(delta: float) -> void:
 		
 	$Sprite.scale.x = 0.2 if velocity.x > 0 else -0.2
 	var last = velocity
-	
+		
 	move_and_slide()
-	
 	if is_on_wall():
 		velocity = last.bounce(get_wall_normal())
-	if is_on_floor() and not Input.is_action_just_pressed("jump") and last.y > 18.0:
-		velocity.y = -last.y
+	if is_on_floor() and not Input.is_action_just_pressed("jump"):
+		if dir_buff:
+			bounce()
+		elif last.y > 230.0:
+			velocity.y = -last.y
+		
 
 # Results
 const resultsText = [
