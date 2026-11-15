@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://ct1u0772p386s"]
+
+[ext_resource type="FontFile" uid="uid://rjckcq8osqvi" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="1_3shnc"]
+[ext_resource type="Script" uid="uid://b666xaj6jv4gt" path="res://scripts/level_select.gd" id="1_r77uv"]
+[ext_resource type="PackedScene" uid="uid://blektmpxnm4aq" path="res://scenes/game.tscn" id="2_4nqmc"]
+[ext_resource type="PackedScene" uid="uid://dbi07py37weul" path="res://scenes/l_2.tscn" id="3_7plkq"]
+[ext_resource type="PackedScene" uid="uid://noai5vdogymu" path="res://scenes/l_3.tscn" id="4_ckc44"]
+[ext_resource type="Texture2D" uid="uid://dd0u8xyuknimm" path="res://assets/images/Sky.png" id="6_o2xx4"]
+
+[sub_resource type="Gradient" id="Gradient_uci4i"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.5686275, 0.5686275, 0.5686275, 0.54509807)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tgbg3"]
+gradient = SubResource("Gradient_uci4i")
+
+[sub_resource type="LabelSettings" id="LabelSettings_tgbg3"]
+font = ExtResource("1_3shnc")
+font_size = 32
+
+[node name="LevelSelect" type="Control" unique_id=339674171]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r77uv")
+l1 = ExtResource("2_4nqmc")
+l2 = ExtResource("3_7plkq")
+l3 = ExtResource("4_ckc44")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=109963509]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_tgbg3")
+
+[node name="Title" type="Label" parent="TextureRect" unique_id=1152939329]
+layout_mode = 0
+offset_left = 150.0
+offset_right = 350.0
+offset_bottom = 50.0
+text = "Level Select"
+label_settings = SubResource("LabelSettings_tgbg3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level1" type="Button" parent="TextureRect" unique_id=685554479]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -32.0
+offset_right = -68.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Number" type="Label" parent="TextureRect/Level1" unique_id=1637058909]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_tgbg3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level2" type="Button" parent="TextureRect" unique_id=1239585537]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Number" type="Label" parent="TextureRect/Level2" unique_id=1995360252]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = SubResource("LabelSettings_tgbg3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level3" type="Button" parent="TextureRect" unique_id=1393971601]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 68.0
+offset_top = -32.0
+offset_right = 132.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Number" type="Label" parent="TextureRect/Level3" unique_id=890871558]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_tgbg3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sky" type="TextureRect" parent="." unique_id=1148187287]
+z_index = -2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_o2xx4")
