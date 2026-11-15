@@ -5,8 +5,11 @@ extends CharacterBody2D
 @onready var indicator = $Indicator
 @onready var g_indicator = $GhostInd
 
+@export var goal_obj: Area2D
+
 @export var charge: float
 @export var goal: bool = false
+var reached_final_goal = false
 @export var canMove: bool = true
 
 var mousePos: Vector2
@@ -15,14 +18,36 @@ var direction: Vector2
 var distance: float
 var dir_buff: Vector2
 var charge_buff: float
+var lost = true
+
+func time_lose():
+	velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
+	canMove = false
+	failUI.visible = true
+	failUI.text = "Too late! (R to restart)"
 
 func _ready() -> void:
-	failUI.visible = true
-	failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!\nHop and reach the carrot at the end!"
+	pass # failUI.visible = true
+	# failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!\nHop and reach the carrot at the end!"
 #bounce
 func bounce():
 	if dir_buff.y < -0.18:
 		velocity = dir_buff * 250 * (1 + charge_buff)
+
+func reverse_seq():
+	if not goal:
+		goal = true
+		failUI.visible = true
+		failUI.text = "Now, bounce back to the starting flag!"
+		get_tree().create_timer(3).timeout.connect(func():
+			failUI.visible = false
+		)
+		goal_obj.visible = false
+		timer.time = int(timer.time * 1.2)
+		timer.get_node("../Warning").visible = true
+		if timer.time > 240:
+			timer.time = 240
+	
 
 func _physics_process(delta: float) -> void:
 	direction = self.global_position.direction_to(mousePos)
@@ -40,13 +65,13 @@ func _physics_process(delta: float) -> void:
 	indicator.rotation = direction.angle()
 	indicator.self_modulate = Color.from_hsv(hue,1,1,1)
 
-	if Input.is_action_just_pressed("charge"):
-		if charge <= 2:
-			charge += 0.5
-			hue -= 0.025
-		else:
-			charge = 0
-			hue = 0.15
+	#if Input.is_action_just_pressed("charge"):
+		#if charge <= 2:
+			#charge += 0.5
+			#hue -= 0.025
+		#else:
+			#charge = 0
+			#hue = 0.15
 	# Hop
 	dir_buff = direction
 	charge_buff = charge
@@ -62,16 +87,17 @@ func _physics_process(delta: float) -> void:
 		
 	# Restart
 	if Input.is_action_pressed("restart level"):
-		position = Vector2(0,0)
-		velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
-		failUI.visible = false
-		timer.time_elapsed = 0.0
-		goal = false
-		charge = 0
-		dir_buff = Vector2.ZERO
-		charge_buff = 0
-		hue = 0.15
-		canMove = true
+		get_tree().reload_current_scene()
+		#position = Vector2(0,0)
+		#velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
+		#failUI.visible = false
+		#timer.time_elapsed = 0.0
+		#goal = false
+		#charge = 0
+		#dir_buff = Vector2.ZERO
+		#charge_buff = 0
+		#hue = 0.15
+		#canMove = true
 		
 		
 	$Sprite.scale.x = 0.2 if velocity.x > 0 else -0.2
@@ -85,7 +111,9 @@ func _physics_process(delta: float) -> void:
 			bounce()
 		elif last.y > 230.0:
 			velocity.y = -last.y
-		
+	
+	if timer.time < 0:
+		time_lose()
 		# charge scroll option
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -116,17 +144,13 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		failUI.text = resultsText[randi_range(0,len(resultsText)) - 1] + "\nPress R to Restart"
 		canMove = false
 	if area.is_in_group("goal"):
-		goal = true
-		failUI.visible = true
-		failUI.text = "Now, bounce back to the starting flag!"
-		get_tree().create_timer(3).timeout.connect(func():
-			failUI.visible = false
-		)
+		reverse_seq()
 	if area.is_in_group("finalgoal"):
-		if goal == true:
+		if goal == true and not reached_final_goal:
+			reached_final_goal = true
 			canMove = false
 			failUI.visible = true
-			failUI.text = "Amazing! Cleared in " + timer.text + "!\nPress R to Restart"
+			failUI.text = "Amazing! Cleared in " + timer.real_time() + "!\nPress R to Restart"
 			
 func please_let_me_commit():
 		pass
