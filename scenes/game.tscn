@@ -1057,7 +1057,6 @@ grow_vertical = 0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=382253848]
 position = Vector2(3, 141)
-position_smoothing_enabled = true
 position_smoothing_speed = 25.0
 
 [editable path="Player"]

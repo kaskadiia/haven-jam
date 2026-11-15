@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	mousePos = get_global_mouse_position()
 	indicator.rotation = direction.angle()
 	indicator.self_modulate = Color.from_hsv(hue,1,1,1)
-	
+
 	if Input.is_action_just_pressed("charge"):
 		if charge <= 2:
 			charge += 0.5
@@ -84,6 +84,17 @@ func _physics_process(delta: float) -> void:
 		elif last.y > 230.0:
 			velocity.y = -last.y
 		
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+				if charge <= 2:
+					charge += 0.5
+					hue -= 0.025
+			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+				if charge > 0:
+					charge = 0
+					hue = 0.15
 
 # Results
 const resultsText = [
