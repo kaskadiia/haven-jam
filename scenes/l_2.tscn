@@ -997,10 +997,12 @@ pattern_6 = SubResource("TileMapPattern_1kice")
 [node name="L2" type="Node2D" unique_id=1920538082]
 position = Vector2(5, 2)
 
-[node name="Player" parent="." unique_id=412430487 node_paths=PackedStringArray("failUI", "timer", "goal_obj") instance=ExtResource("1_ugnwd")]
+[node name="Player" parent="." unique_id=412430487 node_paths=PackedStringArray("failUI", "timer", "dark", "parallax", "goal_obj") instance=ExtResource("1_ugnwd")]
 position = Vector2(3, 141)
 failUI = NodePath("../CanvasLayer/CameraUI/Results")
 timer = NodePath("../CanvasLayer/CameraUI/Timer")
+dark = NodePath("../Dark")
+parallax = NodePath("../Node2D/Parallax2D")
 goal_obj = NodePath("../Goal")
 charge = null
 goal = null
@@ -1071,6 +1073,8 @@ texture = ExtResource("8_n67wk")
 stream = ExtResource("8_5l4lb")
 autoplay = true
 playback_type = 1
+
+[node name="Dark" type="CanvasModulate" parent="." unique_id=838632206]
 
 [editable path="Player"]
 [editable path="CanvasLayer/CameraUI"]
