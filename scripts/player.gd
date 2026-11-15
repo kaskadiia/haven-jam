@@ -1,11 +1,16 @@
 extends CharacterBody2D
-@onready var persihscreen = $Camera2D/persihscreen
+
+@onready var failUI = $Camera2D/CameraUI/FailScreen
+@onready var timer = $Camera2D/CameraUI/Timer
 @onready var indicator = $Indicator
+
+@export var charge: float
+@export var goal: bool = false
+
 var mousePos: Vector2
 var hue: float = 0.15
 var direction: Vector2
 var distance: float
-@export var charge: float
 
 func _physics_process(delta: float) -> void:
 	direction = self.global_position.direction_to(mousePos)
@@ -29,21 +34,30 @@ func _physics_process(delta: float) -> void:
 		else:
 			charge = 0
 			hue = 0.15
-	#hopping/movement
+	# Hop
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity = direction * 250 * (1 + charge)
 		charge = 0
 		hue = 0.15
 		
-	#restarts levels
+	# Restart
 	if Input.is_action_pressed("restart level"):
 		position = Vector2(0,0)
 		velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
-		persihscreen.visible = false
+		failUI.visible = false
+		timer.time_elapsed = 0.0
+		goal = false
+		charge = 0
+		hue = 0.15
 	move_and_slide()
 
-#perishing mechcanic
+# Fail
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("danger"):
 		velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
-		persihscreen.visible = !persihscreen.visible
+		failUI.visible = true
+	if area.is_in_group("goal"):
+		goal = true
+	if area.is_in_group("finalgoal"):
+		if goal == true:
+			print("wowow you win!!!")

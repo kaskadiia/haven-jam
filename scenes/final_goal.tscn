@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d22abg0604pl0"]
+
+[ext_resource type="Texture2D" uid="uid://cfksdwmsk7d6r" path="res://assets/Flag.png" id="1_ndqt7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uci4i"]
+size = Vector2(98, 104)
+
+[node name="FinalGoal" type="Area2D" unique_id=1696877343 groups=["finalgoal"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1718230291]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ndqt7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1543632762]
+shape = SubResource("RectangleShape2D_uci4i")
