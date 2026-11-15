@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://b4xrkuo0jo831" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dcqb3815i83wb" path="res://assets/Bunny.png" id="2_g2els"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjr5b"]
+radius = 67.0
+height = 134.0
+
 [sub_resource type="Gradient" id="Gradient_g2els"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0, 0.56666666, 0.61333334)
@@ -13,15 +17,14 @@ gradient = SubResource("Gradient_g2els")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
-radius = 66.00758
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjr5b"]
-radius = 67.0
-height = 134.0
-
 [node name="Player" type="CharacterBody2D" unique_id=412430487]
 script = ExtResource("1_g2els")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=294114216]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=285970708]
+position = Vector2(2, 11)
+shape = SubResource("CapsuleShape2D_rjr5b")
 
 [node name="Indicator" type="Sprite2D" parent="." unique_id=1561414767]
 position = Vector2(0, -86)
@@ -32,14 +35,7 @@ texture = SubResource("GradientTexture2D_tgbg3")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_g2els")
 
-[node name="collision" type="CollisionShape2D" parent="." unique_id=1072325583]
-position = Vector2(3, 11)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("CircleShape2D_qhqgy")
-
-[node name="hitbox" type="Area2D" parent="." unique_id=294114216]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=285970708]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=350491677]
 position = Vector2(2, 11)
 shape = SubResource("CapsuleShape2D_rjr5b")
 

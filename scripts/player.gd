@@ -41,3 +41,4 @@ func _physics_process(delta: float) -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("danger"):
 		position = Vector2(0,0)
+		velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
