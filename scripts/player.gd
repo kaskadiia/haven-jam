@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@onready var failUI = $Camera2D/CameraUI/Results
-@onready var timer = $Camera2D/CameraUI/Timer
+@export var failUI: Label
+@export var timer: Label
 @onready var indicator = $Indicator
 
 @export var charge: float
