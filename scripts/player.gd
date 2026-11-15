@@ -18,13 +18,16 @@ var direction: Vector2
 var distance: float
 var dir_buff: Vector2
 var charge_buff: float
-var lost = true
+var lost = false
 
 func time_lose():
-	velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
-	canMove = false
-	failUI.visible = true
-	failUI.text = "Too late! (R to restart)"
+	if not lost:
+		lost = true
+		canMove = false
+		velocity = Vector2.ZERO
+		failUI.visible = true
+		failUI.text = resultsText[randi_range(0,len(resultsText)) - 1] + "\nPress R to Restart"
+		Engine.time_scale = 0
 
 func _ready() -> void:
 	pass # failUI.visible = true
@@ -33,6 +36,7 @@ func _ready() -> void:
 func bounce():
 	if dir_buff.y < -0.18:
 		velocity = dir_buff * 250 * (1 + charge_buff)
+	#$Sprite.scale.y = 0.1
 
 func reverse_seq():
 	if not goal:
@@ -43,7 +47,7 @@ func reverse_seq():
 			failUI.visible = false
 		)
 		goal_obj.visible = false
-		timer.time = int(timer.time * 1.2)
+		timer.time = int(timer.time * 1.35)
 		timer.get_node("../Warning").visible = true
 		if timer.time > 240:
 			timer.time = 240
@@ -88,6 +92,7 @@ func _physics_process(delta: float) -> void:
 	# Restart
 	if Input.is_action_pressed("restart level"):
 		get_tree().reload_current_scene()
+		Engine.time_scale = 1
 		#position = Vector2(0,0)
 		#velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
 		#failUI.visible = false
@@ -98,11 +103,16 @@ func _physics_process(delta: float) -> void:
 		#charge_buff = 0
 		#hue = 0.15
 		#canMove = true
-		
-		
-	$Sprite.scale.x = 0.2 if velocity.x > 0 else -0.2
+	
+	if ($Sprite.scale.x < 0 and velocity.x > 0) or ($Sprite.scale.x > 0 and velocity.x < 0):
+		$Sprite.scale.x = -$Sprite.scale.x
+
+	#$Sprite.scale.y = lerpf($Sprite.scale.y, 0.2, 0.02)
+	
+	
 	var last = velocity
 		
+	
 	move_and_slide()
 	if is_on_wall():
 		velocity = last.bounce(get_wall_normal())
@@ -139,10 +149,7 @@ const resultsText = [
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("danger"):
-		velocity = Vector2(velocity.x * 0.0,velocity.y * 0.0)
-		failUI.visible = true
-		failUI.text = resultsText[randi_range(0,len(resultsText)) - 1] + "\nPress R to Restart"
-		canMove = false
+		time_lose()
 	if area.is_in_group("goal"):
 		reverse_seq()
 	if area.is_in_group("finalgoal"):
