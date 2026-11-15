@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://rjckcq8osqvi" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="1_3shnc"]
 [ext_resource type="Script" uid="uid://b666xaj6jv4gt" path="res://scripts/level_select.gd" id="1_r77uv"]
-[ext_resource type="PackedScene" uid="uid://blektmpxnm4aq" path="res://scenes/game.tscn" id="2_4nqmc"]
+[ext_resource type="PackedScene" uid="uid://blektmpxnm4aq" path="res://scenes/l_1.tscn" id="2_4nqmc"]
 [ext_resource type="PackedScene" uid="uid://dbi07py37weul" path="res://scenes/l_2.tscn" id="3_7plkq"]
 [ext_resource type="PackedScene" uid="uid://noai5vdogymu" path="res://scenes/l_3.tscn" id="4_ckc44"]
 [ext_resource type="Texture2D" uid="uid://dd0u8xyuknimm" path="res://assets/images/Sky.png" id="6_o2xx4"]
@@ -17,6 +17,10 @@ gradient = SubResource("Gradient_uci4i")
 [sub_resource type="LabelSettings" id="LabelSettings_tgbg3"]
 font = ExtResource("1_3shnc")
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_5l4lb"]
+font = ExtResource("1_3shnc")
+font_size = 64
 
 [node name="LevelSelect" type="Control" unique_id=339674171]
 layout_mode = 3
@@ -160,3 +164,26 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("6_o2xx4")
+
+[node name="Bnuy" type="TextureRect" parent="Sky" unique_id=1917642644]
+z_index = -2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_o2xx4")
+
+[node name="Title" type="Label" parent="." unique_id=255918633]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -198.0
+offset_top = 75.0
+offset_right = 198.0
+offset_bottom = 153.0
+grow_horizontal = 2
+text = "Back to the Burrow"
+label_settings = SubResource("LabelSettings_5l4lb")
+horizontal_alignment = 1
+vertical_alignment = 1

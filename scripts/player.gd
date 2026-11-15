@@ -31,8 +31,11 @@ func time_lose():
 
 func _ready() -> void:
 	failUI.visible = true
-	failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!\nHop and reach the carrot at the end!"
-	
+	failUI.text = "Use scroll wheel to change power!\nHop and reach the carrot at the end!\nPress Esc to go to Level Select"
+	get_tree().create_timer(3).timeout.connect(func():
+		failUI.visible = false
+	)
+
 #bounce
 func bounce():
 	if dir_buff.y < -0.18 and canMove:
@@ -163,7 +166,4 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			reached_final_goal = true
 			canMove = false
 			failUI.visible = true
-			failUI.text = "Amazing! Cleared in " + timer.real_time() + "!\nPress R to Restart"
-			
-func please_let_me_commit():
-		pass
+			failUI.text = "Amazing! Cleared in " + timer.real_time() + "!\nPress R to Restart\nPress Esc to go to Level Select"
