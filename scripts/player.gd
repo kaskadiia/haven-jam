@@ -5,6 +5,9 @@ extends CharacterBody2D
 @onready var indicator = $Indicator
 @onready var g_indicator = $GhostInd
 
+@export var dark: CanvasModulate
+@export var parallax: Parallax2D
+
 @export var goal_obj: Area2D
 
 @export var charge: float
@@ -55,6 +58,15 @@ func reverse_seq():
 		timer.get_node("../Warning").visible = true
 		if timer.time > 240:
 			timer.time = 240
+		var tw = get_tree().create_tween()
+		tw.set_trans(Tween.TRANS_LINEAR)
+		tw.tween_property(dark, "color",Color(0.0, 0.0, 0.0, 1.0), timer.time)
+		var tw2 = get_tree().create_tween()
+		tw2.set_trans(Tween.TRANS_LINEAR)
+		tw2.tween_property(parallax, "modulate",Color(0.093, 0.093, 0.093, 1.0), timer.time * 0.75)
+		tw2.play()
+		tw.play()
+
 	
 
 func _physics_process(delta: float) -> void:
@@ -166,4 +178,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			reached_final_goal = true
 			canMove = false
 			failUI.visible = true
-			failUI.text = "Amazing! Cleared in " + timer.real_time() + "!\nPress R to Restart\nPress Esc to go to Level Select"
+			failUI.text = "Amazing! Cleared in " + timer.real_time() + "!\nPress R to Restart"
+			Engine.time_scale = 0
+			
+func please_let_me_commit():
+		pass

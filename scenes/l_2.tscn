@@ -1002,6 +1002,9 @@ position = Vector2(3, 141)
 failUI = NodePath("../CanvasLayer/CameraUI/Results")
 timer = NodePath("../CanvasLayer/CameraUI/Timer")
 goal_obj = NodePath("../Goal")
+charge = null
+goal = null
+canMove = null
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=1519801586]
 remote_path = NodePath("../../Camera2D")

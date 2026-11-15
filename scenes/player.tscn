@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://qm0yqkxmdvwe" path="res://assets/images/bunny2.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://bj5uwlwmke6ij" path="res://assets/images/Arrow1.png" id="4_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://lx7ohld7665l" path="res://assets/images/Arrow2.png" id="5_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://gtaen0iat6p4" path="res://assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="6_tuyoq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjr5b"]
 radius = 14.0
@@ -74,5 +75,19 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_uci4i")
 autoplay = "default"
 frame_progress = 0.9832568
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=961785483]
+color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+shadow_enabled = true
+shadow_filter_smooth = 64.0
+texture = ExtResource("6_tuyoq")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1209306027]
+position = Vector2(-5, 30.000002)
+scale = Vector2(3, 3)
+color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+shadow_enabled = true
+shadow_filter_smooth = 64.0
+texture = ExtResource("6_tuyoq")
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
