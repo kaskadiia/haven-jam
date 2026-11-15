@@ -13,7 +13,7 @@
 size = Vector2(84, 50)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tgbg3"]
-distance = -339.0
+distance = -2417.0
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_0tnpc"]
 tile_data = PackedInt32Array(0, 65539, 0, 1, 131075, 0)
