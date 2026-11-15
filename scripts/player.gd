@@ -30,8 +30,9 @@ func time_lose():
 		Engine.time_scale = 0
 
 func _ready() -> void:
-	pass # failUI.visible = true
-	# failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!\nHop and reach the carrot at the end!"
+	failUI.visible = true
+	failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!\nHop and reach the carrot at the end!"
+	
 #bounce
 func bounce():
 	if dir_buff.y < -0.18 and canMove:
