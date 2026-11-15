@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ba8u0nj3j6u1b"]
 
-[ext_resource type="FontFile" uid="uid://rjckcq8osqvi" path="res://assets/DynaPuff-VariableFont_wdth,wght.ttf" id="1_4plvg"]
+[ext_resource type="FontFile" uid="uid://rjckcq8osqvi" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="1_4plvg"]
 [ext_resource type="Script" uid="uid://cck0pmx2uu1ic" path="res://scripts/stopwatch.gd" id="2_ro4ow"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tgbg3"]
@@ -54,3 +54,8 @@ label_settings = SubResource("LabelSettings_tgbg3")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_ro4ow")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=968183382]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

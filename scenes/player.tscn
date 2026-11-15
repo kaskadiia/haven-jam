@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cpsearjfiykcg"]
 
 [ext_resource type="Script" uid="uid://b4xrkuo0jo831" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://4sig7hw247jp" path="res://assets/bunny1.png" id="2_dqkch"]
-[ext_resource type="Texture2D" uid="uid://qm0yqkxmdvwe" path="res://assets/bunny2.png" id="3_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://bj5uwlwmke6ij" path="res://assets/Arrow1.png" id="4_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://lx7ohld7665l" path="res://assets/Arrow2.png" id="5_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://4sig7hw247jp" path="res://assets/images/bunny1.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://qm0yqkxmdvwe" path="res://assets/images/bunny2.png" id="3_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://bj5uwlwmke6ij" path="res://assets/images/Arrow1.png" id="4_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://lx7ohld7665l" path="res://assets/images/Arrow2.png" id="5_tuyoq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjr5b"]
 radius = 45.0

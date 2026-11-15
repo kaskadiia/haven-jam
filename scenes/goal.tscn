@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0ln8gccfxusf"]
 
-[ext_resource type="Texture2D" uid="uid://cq45rx6ac622a" path="res://assets/Carrot.png" id="1_jbojv"]
+[ext_resource type="Texture2D" uid="uid://cq45rx6ac622a" path="res://assets/images/Carrot.png" id="1_jbojv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tgbg3"]
 radius = 36.0
