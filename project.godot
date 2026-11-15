@@ -13,7 +13,7 @@ config_version=5
 config/name="Back to the Burrow"
 run/main_scene="uid://ct1u0772p386s"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="uid://bbfk1wqv1cusl"
+config/icon="uid://4sig7hw247jp"
 
 [display]
 
