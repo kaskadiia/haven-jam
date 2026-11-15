@@ -15,7 +15,7 @@ var distance: float
 
 func _ready() -> void:
 	failUI.visible = true
-	failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!"
+	failUI.text = "Press LMB / Space to hop!\nPress RMB / Z to increase power!\nHop and reach the carrot at the end!"
 
 func _physics_process(delta: float) -> void:
 	direction = self.global_position.direction_to(mousePos)
@@ -77,9 +77,10 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		canMove = false
 	if area.is_in_group("goal"):
 		goal = true
+		failUI.visible = true
+		failUI.text = "Now, bounce back to the starting flag!"
 	if area.is_in_group("finalgoal"):
 		if goal == true:
 			canMove = false
 			failUI.visible = true
 			failUI.text = "Amazing! Cleared in " + timer.text + "!\nPress R to Restart"
-			print("wowow you win!!!")
