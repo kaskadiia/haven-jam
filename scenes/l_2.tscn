@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://dbi07py37weul"]
 
 [ext_resource type="PackedScene" uid="uid://cpsearjfiykcg" path="res://scenes/player.tscn" id="1_ugnwd"]
-[ext_resource type="Texture2D" uid="uid://i1mykl2r8iig" path="res://assets/images/barbed-wire-transparent-free-png.webp" id="2_wx2ev"]
 [ext_resource type="PackedScene" uid="uid://b0ln8gccfxusf" path="res://scenes/goal.tscn" id="3_gxcw4"]
 [ext_resource type="PackedScene" uid="uid://d22abg0604pl0" path="res://scenes/final_goal.tscn" id="4_408ja"]
 [ext_resource type="Texture2D" uid="uid://c8gfmgfkufcuc" path="res://assets/tilesets/path-tileset.png" id="5_02ya6"]
@@ -9,11 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ba8u0nj3j6u1b" path="res://scenes/camera_ui.tscn" id="7_652vn"]
 [ext_resource type="Texture2D" uid="uid://dd0u8xyuknimm" path="res://assets/images/Sky.png" id="8_n67wk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjr5b"]
-size = Vector2(84, 50)
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tgbg3"]
-distance = -339.0
+distance = -2138.0
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_0tnpc"]
 tile_data = PackedInt32Array(0, 65539, 0, 1, 131075, 0)
@@ -1011,14 +1007,6 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="Danger" type="Area2D" parent="." unique_id=343224427 groups=["danger"]]
 position = Vector2(-2716, -1329)
-
-[node name="BarbedWireS" type="Sprite2D" parent="Danger" unique_id=827998217]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_wx2ev")
-
-[node name="BarbedWireC" type="CollisionShape2D" parent="Danger" unique_id=1380664527]
-position = Vector2(3, -1)
-shape = SubResource("RectangleShape2D_rjr5b")
 
 [node name="Water" type="CollisionShape2D" parent="Danger" unique_id=555626800]
 shape = SubResource("WorldBoundaryShape2D_tgbg3")
