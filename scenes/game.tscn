@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d22abg0604pl0" path="res://scenes/final_goal.tscn" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8gfmgfkufcuc" path="res://assets/tilesets/path-tileset.png" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://dqacwrnhgim2" path="res://assets/tilesets/prop-tileset.png" id="7_gee14"]
+[ext_resource type="Texture2D" uid="uid://dd0u8xyuknimm" path="res://assets/images/Sky.png" id="8_gee14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjr5b"]
 size = Vector2(84, 50)
@@ -1058,6 +1059,18 @@ grow_vertical = 0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=382253848]
 position = Vector2(3, 141)
 position_smoothing_speed = 25.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1048296259]
+z_index = -1000
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D" unique_id=385480816]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(2560, 1440)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D" unique_id=370885637]
+scale = Vector2(2, 2)
+texture = ExtResource("8_gee14")
 
 [editable path="Player"]
 [editable path="CanvasLayer/CameraUI"]
