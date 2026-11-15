@@ -99,6 +99,9 @@ func _physics_process(delta: float) -> void:
 		#hue = 0.15
 		#canMove = true
 		
+	# Exit
+	if Input.is_action_pressed("exit"):
+		get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 		
 	$Sprite.scale.x = 0.2 if velocity.x > 0 else -0.2
 	var last = velocity
