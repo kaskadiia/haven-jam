@@ -126,3 +126,6 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			canMove = false
 			failUI.visible = true
 			failUI.text = "Amazing! Cleared in " + timer.text + "!\nPress R to Restart"
+			
+func please_let_me_commit():
+		pass
