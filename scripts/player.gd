@@ -23,8 +23,6 @@ func _ready() -> void:
 func bounce():
 	if dir_buff.y < -0.18:
 		velocity = dir_buff * 250 * (1 + charge_buff)
-	if failUI.visible == true:
-		failUI.visible = false
 
 func _physics_process(delta: float) -> void:
 	direction = self.global_position.direction_to(mousePos)
@@ -50,13 +48,16 @@ func _physics_process(delta: float) -> void:
 			charge = 0
 			hue = 0.15
 	# Hop
-	if Input.is_action_just_pressed("jump"):
-		dir_buff = direction
-		charge_buff = charge
-		g_indicator.rotation = dir_buff.angle()
-		g_indicator.self_modulate = indicator.self_modulate
-		if is_on_floor() and canMove == true:
-			bounce()
+	dir_buff = direction
+	charge_buff = charge
+	
+	#if Input.is_action_just_pressed("jump"):
+		#dir_buff = direction
+		#charge_buff = charge
+		#g_indicator.rotation = dir_buff.angle()
+		#g_indicator.self_modulate = indicator.self_modulate
+		#if is_on_floor() and canMove == true:
+			#bounce()
 
 		
 	# Restart
@@ -118,6 +119,9 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		goal = true
 		failUI.visible = true
 		failUI.text = "Now, bounce back to the starting flag!"
+		get_tree().create_timer(3).timeout.connect(func():
+			failUI.visible = false
+		)
 	if area.is_in_group("finalgoal"):
 		if goal == true:
 			canMove = false
