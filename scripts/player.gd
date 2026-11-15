@@ -30,7 +30,13 @@ func time_lose():
 		velocity = Vector2.ZERO
 		failUI.visible = true
 		failUI.text = resultsText[randi_range(0,len(resultsText)) - 1] + "\nPress R to Restart"
-		Engine.time_scale = 0
+		var tw1 = get_tree().create_tween()
+		tw1.tween_property(failUI.get_node("../Fade"), "color", Color(0.0, 0.0, 0.0, 1.0), 0.5)
+		tw1.play()
+		tw1.finished.connect(func():
+			Engine.time_scale = 0
+		)
+		
 
 func _ready() -> void:
 	failUI.visible = true
@@ -49,7 +55,7 @@ func reverse_seq():
 	if not goal:
 		goal = true
 		failUI.visible = true
-		failUI.text = "Now, bounce back to the starting flag!"
+		failUI.text = "Now, bounce back to the beginning of the level!"
 		get_tree().create_timer(3).timeout.connect(func():
 			failUI.visible = false
 		)
@@ -72,6 +78,7 @@ func reverse_seq():
 		tw3.tween_property($PointLight2D, "energy", 1.0, timer.time * 0.25)
 		tw3.tween_property($PointLight2D2, "energy", 1.0, timer.time * 0.25)
 		tw3.play()
+		
 		
 
 	
@@ -187,7 +194,13 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			canMove = false
 			failUI.visible = true
 			failUI.text = "Amazing! Cleared in " + timer.real_time() + "!\nPress R to Restart"
-			Engine.time_scale = 0
+			var tw1 = get_tree().create_tween()
+			tw1.tween_property(failUI.get_node("../Fade"), "color", Color(0.0, 0.0, 0.0, 1.0), 0.5)
+			tw1.play()
+			tw1.finished.connect(func():
+				Engine.time_scale = 0
+			)
+			
 			
 func please_let_me_commit():
 		pass #pass 2
