@@ -11,6 +11,6 @@ This game was created for [Hack Club Haven](https://haven.hackclub.com/)​ in a
 **Credits:**
 Kadia - Programmer, Artist
 Deelan - Programmer, Composer
-PieFraction - Programmer, Level Designer
+JanklyLanky - Programmer, Level Designer
 
 Font: ​DynaPuff via Google Fonts
