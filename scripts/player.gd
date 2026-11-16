@@ -198,7 +198,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			reached_final_goal = true
 			canMove = false
 			failUI.visible = true
-			failUI.text = "Amazing! Cleared in " + timer.real_time() + "!\nPress R to Restart"
+			failUI.text = "Amazing! Cleared in " + timer.real_time() + "!\nPress esc for more levels!"
 			var tw1 = get_tree().create_tween()
 			tw1.tween_property(failUI.get_node("../Fade"), "color", Color(0.0, 0.0, 0.0, 1.0), 0.5)
 			tw1.play()
