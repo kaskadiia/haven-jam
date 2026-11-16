@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var timer: Label
 @onready var indicator = $Indicator
 @onready var g_indicator = $GhostInd
+@onready var sfx = $SoundEffects
 
 @export var dark: CanvasModulate
 @export var parallax: Parallax2D
@@ -49,6 +50,8 @@ func _ready() -> void:
 func bounce():
 	if dir_buff.y < -0.18 and canMove:
 		velocity = dir_buff * 250 * (1 + charge_buff)
+		sfx.stream = load("res://assets/audio/dirt.mp3")
+		sfx.play()
 	#$Sprite.scale.y = 0.1
 
 func reverse_seq():
@@ -60,6 +63,8 @@ func reverse_seq():
 			failUI.visible = false
 		)
 		goal_obj.visible = false
+		sfx.stream = load("res://assets/audio/crunch.mp3")
+		sfx.play()
 		timer.time = int(timer.time * 1.5)
 		timer.get_node("../Warning").visible = true
 		if timer.time > 240:

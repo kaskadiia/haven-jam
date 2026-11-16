@@ -92,4 +92,6 @@ shadow_enabled = true
 shadow_filter_smooth = 64.0
 texture = ExtResource("6_tuyoq")
 
+[node name="SoundEffects" type="AudioStreamPlayer" parent="." unique_id=2138690391]
+
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
