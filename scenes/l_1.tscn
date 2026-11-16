@@ -1228,6 +1228,7 @@ playback_type = 1
 [node name="Dark" type="CanvasModulate" parent="." unique_id=894397618]
 
 [node name="Tutorial" type="Sprite2D" parent="." unique_id=469560807]
+modulate = Color(1, 1, 1, 0.64705884)
 position = Vector2(183, 106)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("12_brwov")

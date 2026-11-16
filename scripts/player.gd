@@ -41,7 +41,7 @@ func time_lose():
 
 func _ready() -> void:
 	failUI.visible = true
-	failUI.text = "Use scroll wheel to change power!\nHop and reach the carrot at the end!\nPress Esc to go to Level Select"
+	failUI.text = ""
 	get_tree().create_timer(3).timeout.connect(func():
 		failUI.visible = false
 	)
