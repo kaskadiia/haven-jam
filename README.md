@@ -19,3 +19,5 @@ This game was created for **[Hack Club Haven](https://haven.hackclub.com/)​** 
 **JanklyLanky** - Programmer, Level Designer
 
 Font: ​DynaPuff via Google Fonts
+
+Sound effects via Pixabay
