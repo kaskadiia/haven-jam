@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://rjckcq8osqvi" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="8_84gcc"]
 [ext_resource type="Texture2D" uid="uid://dd0u8xyuknimm" path="res://assets/images/Sky.png" id="9_gd8b3"]
 [ext_resource type="AudioStream" uid="uid://bbo5ii2pmd0qm" path="res://assets/audio/havenjam.mp3" id="10_bpecs"]
+[ext_resource type="Texture2D" uid="uid://cbi3aw7qc1k6c" path="res://assets/images/tutorial.png" id="12_brwov"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tgbg3"]
 distance = -593.0
@@ -1225,6 +1226,11 @@ autoplay = true
 playback_type = 1
 
 [node name="Dark" type="CanvasModulate" parent="." unique_id=894397618]
+
+[node name="Tutorial" type="Sprite2D" parent="." unique_id=469560807]
+position = Vector2(183, 106)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_brwov")
 
 [editable path="Player"]
 [editable path="CanvasLayer/CameraUI"]
